@@ -53,6 +53,7 @@ public class ListViewAdapter extends BaseAdapter {
 
         final ItemBean itemObj = mData.get(position);
 
+        //This is important. An EditText just one TextWatcher.
         if (holder.editText.getTag() instanceof TextWatcher) {
             holder.editText.removeTextChangedListener((TextWatcher) holder.editText.getTag());
         }
@@ -62,12 +63,10 @@ public class ListViewAdapter extends BaseAdapter {
         TextWatcher watcher = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
             }
 
             @Override
@@ -82,7 +81,6 @@ public class ListViewAdapter extends BaseAdapter {
 
         holder.editText.addTextChangedListener(watcher);
         holder.editText.setTag(watcher);
-
 
         return convertView;
     }
