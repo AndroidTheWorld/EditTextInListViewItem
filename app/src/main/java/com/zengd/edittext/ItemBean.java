@@ -5,7 +5,6 @@ package com.zengd.edittext;
  */
 public class ItemBean {
     private String text;
-    private boolean isFocus;
 
     public String getText() {
         return text;
@@ -13,13 +12,5 @@ public class ItemBean {
 
     public void setText(String text) {
         this.text = text;
-    }
-
-    public boolean isFocus() {
-        return isFocus;
-    }
-
-    public void setFocus(boolean focus) {
-        isFocus = focus;
     }
 }
