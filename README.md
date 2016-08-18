@@ -44,4 +44,5 @@ final ItemBean itemObj = mData.get(position);
 ![image](http://img.blog.csdn.net/20160818004635058)
 
 查看更详细的描述请访问：
+
 http://blog.csdn.net/zengd0/article/details/52236158
