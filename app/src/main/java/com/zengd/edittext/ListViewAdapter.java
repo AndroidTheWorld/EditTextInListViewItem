@@ -53,7 +53,7 @@ public class ListViewAdapter extends BaseAdapter {
 
         final ItemBean itemObj = mData.get(position);
 
-        //This is important. An EditText just one TextWatcher.
+        //This is important. Remove TextWatcher first.
         if (holder.editText.getTag() instanceof TextWatcher) {
             holder.editText.removeTextChangedListener((TextWatcher) holder.editText.getTag());
         }
