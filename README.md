@@ -9,7 +9,7 @@ EditText是ListView的item，ListView的item可以动态添加，从而让用户
 ```
 final ItemBean itemObj = mData.get(position);
 
-        //This is important. An EditText just one TextWatcher.
+        //This is important. Remove TextWatcher first.
         if (holder.editText.getTag() instanceof TextWatcher) {
             holder.editText.removeTextChangedListener((TextWatcher) holder.editText.getTag());
         }
