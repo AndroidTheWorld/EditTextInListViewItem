@@ -4,7 +4,7 @@ EditText是ListView的item，ListView的item可以动态添加，从而让用户
 
 ![image](http://img.blog.csdn.net/20160818003431922)
 
-要时刻保存EditText的值，我们需要给EditText设置一个文字改变时的监听器（addTextChangedListener），当文字发生改变后，我们获取EditText的值并存于itemObject的某个属性中。这里千万要脚下留心，**EditText只可以add一个textChangedListener**，如果add了多个，会无效，值无法保存。解决方法是每次getView时先remove掉监听器，然后再add。
+要时刻保存EditText的值，我们需要给EditText设置一个文字改变时的监听器（addTextChangedListener），当文字发生改变后，我们获取EditText的值并存于itemObject的某个属性中。这里千万要脚下留心，在EditText调用setText之前，一定要把textChangedListener移除掉，否则setText后又会多次调用监听器里面的方法，造成值的清空。解决方法是每次getView时先remove掉监听器，再setText，最后再add监听器。
 关键代码如下：
 ```
 final ItemBean itemObj = mData.get(position);
